@@ -1,0 +1,38 @@
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+.container{
+      width: 1200px;
+      margin: auto;
+}
+.box-text{
+      margin-top: 50px;
+      padding: 20px 10px;
+      border: 2px dashed red;
+}
+#text{
+      width: 850px;
+      font-size: 18px;
+}
+#topish{
+      margin-top: 20px;
+      width: 250px;
+      height: 40px;
+      font-size: 16px;
+      padding-left: 10px;
+      background: blue;
+      color: #fff;
+}
+
+.bor{
+      background-color: lime !important;
+      outline: rgb(147, 147, 147);
+      border: 1px solid rgb(108, 108, 108);
+}
+.yoq{
+      background: red !important;
+      outline: #000 1px solid;
+      border: #000 1px solid;
+}

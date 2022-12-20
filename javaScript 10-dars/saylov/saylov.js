@@ -30,9 +30,7 @@ function voterResults(arr) {
                   }
            }
       }
-      console.log(`yoshlar ${sum}`);
-      console.log(`o'rta yosh ${ikki}`);
-      console.log(`keksalar ${uch}`);
+      console.log(` Yoshlar soni: ${sum}\n O'rta yoshlar soni: ${ikki}\n Katta yoshlar soni: ${uch}`);
 }
 
 voterResults(voters);

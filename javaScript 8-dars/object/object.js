@@ -21,12 +21,12 @@ let person = {
             let date = new Date().getFullYear();
             let difference = date - created;
             let monthlik = this.bonus + (difference * 25000);
-            return console.log(monthlik);
+            console.log(monthlik);
       }
 }
 function getPerson(person) {
-      console.log(person.getBalance());
-      console.log(person.getAge());
+      person.getBalance();
+      person.getAge();
       console.log(person.isHealthy());
 }
 getPerson(person)

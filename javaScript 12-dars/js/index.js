@@ -89,7 +89,7 @@ group.addEventListener('change', (element) => {
                   }
                   else {
                         span.classList.add('text-bg-danger');
-                        span.innerHTML = 'Yiqildi';
+                        span.innerHTML = 'Yiqildi';   
                   }
                   tdSucces.append(span);
                   tr.classList.add('mt-5');

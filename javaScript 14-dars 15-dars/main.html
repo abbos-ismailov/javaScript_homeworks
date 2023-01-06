@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>All Movies</title>
+      <link rel="stylesheet" href="./css/bootstrap.css">
+      <template id="box-movies">
+            <div class="card" style="width: 18rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                              the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+            </div>
+      </template>
+</head>
+
+<body>
+      <header class="container">
+            <h1 class="text-center text-danger mt-3">Interesting Movies</h1>
+            <label for="search-movie"><code>Searching films</code></label>
+            <input onchange="search()" class="form-control w-25" type="text" id="search-movie">
+      </header>
+      <div class="container-me container d-flex flex-wrap">
+
+      </div>
+      <footer class="container">
+            <div class="">
+                  <button id="prev-btn" class="btn btn-success px-5 mx-4  ">Prev</button>
+
+                  <button id="next-btn" class="btn btn-success px-5 mx-4">Next</button>
+            </div>
+      </footer>
+
+      <script src="./js/bootstrap.min.js"></script>
+      <script src="./js/main.js"></script>
+      <script src="./js/utilits.js"></script>
+</body>
+
+</html>

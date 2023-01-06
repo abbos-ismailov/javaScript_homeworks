@@ -18,7 +18,8 @@ const students = [
 let tableBody = document.getElementById('tBody');
 
 function allStudents (student) {
-      tableBody.innerHTML = ''
+      tableBody.innerHTML = '';
+      let fragment = new DocumentFragment();
       student.forEach((element, index) => {
             let tr = document.createElement('tr');
 
@@ -70,8 +71,9 @@ function allStudents (student) {
 
             tdNatija.append(spanNatija);
             tr.append(thOrder, tdName, tdGroup, tdNatija, tdEdit, tdRemove)
-            tableBody.append(tr);
+            fragment.append(tr);
       });
+      tableBody.append(fragment);
 }
 
 allStudents(students)

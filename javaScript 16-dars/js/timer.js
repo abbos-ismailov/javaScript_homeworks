@@ -6,7 +6,10 @@ let a = setInterval(() => {
       if (res == 0) {
             clearInterval(a);
       }
+      timer.addEventListener('mouseover', () =>{
+            clearInterval(a);
+      })
+      timer.addEventListener('mouseout', () => {
+            setInterval(a , 1000)
+      })
 }, 1000);
-
-
-

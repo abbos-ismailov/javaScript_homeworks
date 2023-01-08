@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Products</title>
+      <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+      <div class="container mt-2">
+            <!-- Button trigger modal -->
+            <button class="btn btn-primary btn-open-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Product added
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">New product added</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                          aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                    <form action="">
+                                          <input id="name-input" class="border rounded w-75 p-1 form-control"
+                                                type="text" placeholder="product-name">
+                                          <input id="text-input" class="border rounded w-75 p-1 form-control mt-2"
+                                                type="text" placeholder="product-infarmation">
+                                    </form>
+                              </div>
+                              <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                          data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary added-btn">Save changes</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <section class="row">
+                  <div class="product-box d-flex flex-wrap">
+                        <template class="template-box">
+                              <div class="card m-2" style="width: 18rem;">
+                                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                                    <div class="card-body">
+                                          <h5 class="card-title">Card title</h5>
+                                          <p class="card-text">
+                                                Some quick example text to build on the card title and make up the bulk
+                                                of the card's content.
+                                          </p>
+                                          <div>
+                                                <a id="remove-btn" href="#" class="btn btn-danger">Delete product</a>
+                                                <a class="tahrirlash-btn btn btn-info" href="#">Tahrirlash</a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </template>
+                  </div>
+            </section>
+      </div>
+      <!-- Modal Ochilishi -->
+      <div class="modal fade" id="exampleModal-edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">New product added</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                              <form action="">
+                                    <input id="edit-name-input" class="border rounded w-75 p-1 form-control" type="text"
+                                          placeholder="product name edit">
+                                    <input id="edit-text-input" class="border rounded w-75 p-1 form-control mt-2" type="text"
+                                          placeholder="product infarmation edit">
+                              </form>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary edit-btn-end">Save edit</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <!-- modal tugadi -->
+      
+
+      <script src="./js/bootstrap.min.js"></script>
+      <script src="./js/product.js"></script>
+</body>
+
+</html>

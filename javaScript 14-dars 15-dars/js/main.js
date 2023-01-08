@@ -2,10 +2,14 @@ let searchMmovie = document.getElementById('search-movie');
 let nextBtn = document.getElementById('next-btn');
 let prevBtn = document.getElementById('prev-btn');
 
-async function allMovies(nextPage, s  = 'captain america') {
-      let result = await fetch(`http://www.omdbapi.com/?s=${s}&page=${nextPage}&apikey=a4a9f59a`);
-      let response = await result.json();
-      return response;
+async function allMovies(nextPage, s = 'captain america') {
+      try {
+            let result = await fetch(`http://www.omdbapi.com/?s=${s}&page=${nextPage}&apikey=a4a9f59a`);
+            let response = await result.json();
+            return response;
+      } catch (error) {
+            alert('eror');
+      }
 }
 
 let containerMe = document.querySelector('.container-me');
@@ -29,14 +33,14 @@ let nextPage = 1;
 nextBtn.addEventListener('click', () => {
       console.log(getLocalStorage);
       movieAndRender(nextPage++);
-      console.log(movieAndRender(nextPage++ , getLocalStorage));
+      console.log(movieAndRender(nextPage++, getLocalStorage));
 })
 prevBtn.addEventListener('click', () => {
       let getLocalStorage = localStorage.getItem("searchInput");
       movieAndRender(nextPage--);
-      console.log(movieAndRender(nextPage-- , getLocalStorage));
+      console.log(movieAndRender(nextPage--, getLocalStorage));
 })
-////////////////////////////////
+///// Pagination panel the end
 
 function movieAndRender(nextPage = 1, s) {
       allMovies(nextPage, s).then((movies) => {
@@ -44,17 +48,18 @@ function movieAndRender(nextPage = 1, s) {
       })
 }
 movieAndRender(nextPage);
-
+////////////   Search function  
 function search() {
       localStorage.setItem("searchInput", searchMmovie.value);
       movieAndRender(1, searchMmovie.value);
-      searchMmovie.value = ''; 
+      searchMmovie.value = '';
 }
+////////////   Search function the end 
 
-
-
+//////////// login kiritish oynasi
 let getEmail = localStorage.getItem("email");
 let getPassword = localStorage.getItem("password");
 if (!getEmail || !getPassword) {
       window.location.href = './index.html';
 }
+//////////// Login kiritish oynsi the end

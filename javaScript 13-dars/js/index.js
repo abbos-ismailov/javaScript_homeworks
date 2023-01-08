@@ -17,7 +17,7 @@ const students = [
 
 let tableBody = document.getElementById('tBody');
 
-function allStudents (student) {
+function allStudents(student) {
       tableBody.innerHTML = '';
       let fragment = new DocumentFragment();
       student.forEach((element, index) => {
@@ -34,41 +34,50 @@ function allStudents (student) {
 
             let tdNatija = document.createElement('td');
             let spanNatija = document.createElement('span');
-            spanNatija.classList.add('badge')
+            spanNatija.classList.add('badge');
             if (element.success) {
                   spanNatija.innerHTML = 'O\'tdi';
                   spanNatija.classList.add('text-bg-primary', 'px-3', 'py-2')
             }
-            else{
+            else {
                   spanNatija.innerHTML = 'Yiqildi';
-                  spanNatija.classList.add('text-bg-danger', 'px-3', 'py-2') 
+                  spanNatija.classList.add('text-bg-danger', 'px-3', 'py-2')
             }
-
+            //// Edit started
             let tdEdit = document.createElement('td');
             let spanEdit = document.createElement('span');
             tdEdit.append(spanEdit);
             spanEdit.innerHTML = 'Edit';
-            spanEdit.classList.add('badge' , 'text-bg-success', 'px-3' , 'py-2');
-            
+            spanEdit.classList.add('badge', 'text-bg-success', 'px-3', 'py-2');
+            //// Edit function started
             spanEdit.dataset.bsToggle = 'modal';
             spanEdit.dataset.bsTarget = '#exampleModal';
             spanEdit.addEventListener('click', () => {
                   let modalBody = document.getElementById('modal-body');
-                  modalBody.innerHTML = element.name + ' ' +  element.group;
+                  modalBody.innerHTML = element.name + ' ' + element.group;
             })
-            
-            /// Remove ishlatish
+
+            /// Remove started
             let tdRemove = document.createElement('td');
             let spanRemove = document.createElement('span');
             tdRemove.append(spanRemove);
             spanRemove.innerHTML = 'Remove';
-            spanRemove.classList.add('badge' , 'text-bg-danger', 'px-3' , 'py-2');
+            spanRemove.classList.add('badge', 'text-bg-danger', 'px-3', 'py-2');
             /// spanRemove function started
-            spanRemove.addEventListener('click' , () =>{
-                 student.splice(index, 1);
-                 allStudents(students);
+            spanRemove.addEventListener('click', () => {
+                  student.splice(index, 1);
+                  allStudents(students);
             })
 
+            //// tr bosilganda alert ga chiqish
+            tr.addEventListener('click', () => {
+                  if (element.success) {
+                        alert(element.name + ' ' + element.success);
+                  }
+                  else{
+                        alert(element.name + ' ' + element.success);
+                  }
+            })
             tdNatija.append(spanNatija);
             tr.append(thOrder, tdName, tdGroup, tdNatija, tdEdit, tdRemove)
             fragment.append(tr);

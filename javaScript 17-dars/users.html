@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Users Information</title>
+      <link rel="stylesheet" href="./css/bootstrap.min.css">
+      <link rel="stylesheet" href="./icon/font-awesome.css">
+      <style>
+            header{
+                  height: 100px;
+            }
+            header button {
+                  background: #aaa;
+                  height: 50px;
+                  width: 50px;
+                  border: none;
+                  color: #000;
+            }
+            .list{
+                  list-style: none;
+                  font-family: monospace, 'fantasy';
+            }
+            .list-box{
+                  width: 800px;
+                  font-size: 20px;
+            }
+            .moon-light{
+                  background: #000;
+                  color: #fff;
+            }
+      </style>
+</head>
+<body>
+      <section class="container">
+            <header class="d-flex align-items-center justify-content-between">
+                  <h2 class="mx-3">User</h2>
+                  <button class="mx-5 night-light fa fa-sun-o rounded-5"></button>
+            </header>
+
+            <main>
+                  <h3 id="user-name"></h3>
+                  <div class="list-box d-flex justify-content-around mt-4">
+                        <ul class="box-left-list list">
+                              <li id="user-name-list"></li>
+                              <li id="user-city"></li>
+                              <li id="user-street"></li>
+                              <li id="company-name"></li>
+                        </ul>
+                        <ul class="box-right-list list mt-3">
+                              <li id="user-email"></li>
+                              <li id="user-phone"></li>
+                              <li id="user-website"></li>
+                              <li></li>
+                        </ul>
+                  </div>
+            </main>
+      </section>
+
+      <script src="./js/users.js"></script>
+</body>
+</html>

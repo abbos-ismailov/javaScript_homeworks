@@ -1,15 +1,20 @@
 let timer = document.getElementById('timer');
+let timerId;
+function rounTime() {
+      timerId = setInterval(() => {
+            timer.innerHTML = +timer.innerHTML - 1;
+            if (timer.innerHTML == 0) {
+                  clearInterval(timerId);
+                  return;
+            }
+      }, 1000);
+      return timerId;
+}
+timerId = rounTime();
 
-let a = setInterval(() => {
-      let res = +timer.innerText - 1;
-      timer.innerHTML = res;
-      if (res == 0) {
-            clearInterval(a);
-      }
-      timer.addEventListener('mouseover', () =>{
-            clearInterval(a);
-      })
-      timer.addEventListener('mouseout', () => {
-            setInterval(a , 1000)
-      })
-}, 1000);
+timer.addEventListener('mouseenter', () => {
+      clearInterval(timerId);
+})
+timer.addEventListener('mouseout', () => {
+      timerId = rounTime();
+})

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Albums</title>
+      <link rel="stylesheet" href="./css/bootstrap.min.css">
+      <link rel="stylesheet" href="./icon/font-awesome.css">
+      <!-- template started -->
+      <template id="template-user">
+            <tr id="tr-user">
+                  <td id="id"></td>
+                  <td id="user-id"></td>
+                  <td id="title"></td>
+                  <td id="koz" class="text-center p-2"><i class="fa fa-eye fs-5"></i></td>
+                  <td id="edit" class="text-center p-2"><i class="fa fa-edit fs-5"></i></td>
+                  <td id="delete-user" class="text-center p-2"><i class="fa fa-trash text-danger fs-4"></i></td>
+            </tr>
+      </template>
+      <!-- template end -->
+</head>
+
+<body class="container mt-2">
+      <table class="table table-bordered border-dark table-inf">
+            <thead>
+                  <tr>
+                        <th>Id</th>
+                        <th>User Id</th>
+                        <th>Title</th>
+                        <th colspan="3">Hodisa</th>
+                  </tr>
+            </thead>
+            <tbody id="tbody-user">
+
+            </tbody>
+      </table>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">User information</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                              <form action="">
+                                    <label for="input-id" class="d-block">Id:
+                                          <input type="number" id="input-id" class="form-control" readonly>
+                                    </label>
+                                    <label for="input-user-id" class="d-block my-2">User Id:
+                                          <input type="number" id="input-user-id" class="form-control" readonly>
+                                    </label>
+                                    <label for="input-title">User Title:</label>
+                                    <input type="text" id="input-title" class="form-control" readonly>
+                              </form>
+                        </div>
+                        <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <!-- Modal end -->
+      <script src="./js/bootstrap.min.js"></script>
+      <script src="./js/index.js"></script>
+</body>
+
+</html>

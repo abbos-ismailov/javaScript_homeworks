@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>Log in page</title>
+      <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+      <style>
+            body{
+                  background: linear-gradient(to left, red, blue);
+            }
+            .form-div{
+                  margin-top: 150px !important;
+                  width: 450px;
+            }
+      </style>
 </head>
+
 <body>
-      
+      <div class="container mt-5 py-5 px-5 m-auto bg-dark-subtle rounded-4 form-div">
+            <form class="d-flex w-100 m-auto form-control flex-column" id="login-form" action="">
+                  <input class="form-control" name="name" id="name" placeholder="Name..." type="text">
+                  <input class="form-control my-3" name="phone" id="phone" placeholder="Phone..." type="text">
+                  <input class="form-control" name="password" id="password" placeholder="Password..." type="password">
+                  <button id="submit-btn" class="btn btn-primary w-25 m-auto mt-3" type="submit">Submit</button>
+            </form>
+      </div>
+
 
       <script src="./js/index.js"></script>
 </body>
+
 </html>

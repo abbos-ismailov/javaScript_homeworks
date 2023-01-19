@@ -1,4 +1,5 @@
 let tBodyUser = document.getElementById('tbody-user');
+let saveEdit = document.getElementById("save-edit");
 
 async function albumUsers() {
       try {
@@ -6,7 +7,7 @@ async function albumUsers() {
             let response = await result.json()
             return response;
       } catch (error) {
-            console.log('error');
+            console.log('error serverdan ma\'lumot kemadi');
       }
 }
 function albumRender(albumList) {
@@ -27,11 +28,10 @@ function albumRender(albumList) {
                   localStorage.setItem("userId", element.userId);
                   window.location.href = './photos.html';
             })
-            //// koz function end /// 
             //// edit function  ////////
             edit.dataset.bsToggle = 'modal';
             edit.dataset.bsTarget = '#exampleModal';
-            edit.addEventListener('click', () => {
+            edit.onclick = () => {
                   let inputId = document.getElementById('input-id');
                   inputId.value = element.id;
 
@@ -40,16 +40,18 @@ function albumRender(albumList) {
 
                   let inputTitle = document.getElementById('input-title');
                   inputTitle.value = element.title;
-            })
-            //// edit function end ////
+
+                  // fetch(`https://jsonplaceholder.typicode.com/albums/${albumList[index].id}`, {
+                  //       method: 'PUT',
+                  // })
+            }
             //// Delete function ////
             deleteUser.addEventListener('click', () => {
-                  console.log(albumList[index]);
-                  delete albumList[index];
                   // albumList.splice(index , 1);
+                  fetch(`https://jsonplaceholder.typicode.com/albums/${albumList[index].id}`, { method: 'DELETE' });
+                  delete albumList[index];
                   albumRender(albumList);
             })
-            //// Delete function end ///
             //// User Id click event ///
             userId.addEventListener('click', () => {
                   localStorage.setItem("userId", element.userId)
@@ -59,7 +61,6 @@ function albumRender(albumList) {
             tBodyUser.append(templateUser);
       });
 }
-
 
 albumUsers().then((albumList) => {
       albumRender(albumList);

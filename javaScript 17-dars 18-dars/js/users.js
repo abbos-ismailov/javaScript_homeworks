@@ -1,6 +1,6 @@
 async function getUsers() {
       try {
-            let response = await fetch('https://jsonplaceholder.typicode.com/users');
+            let response = await fetch(`https://jsonplaceholder.typicode.com/users`);
             let result = await response.json();
             return result;
       } catch (error) {
